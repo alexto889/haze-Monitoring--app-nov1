@@ -3,13 +3,20 @@
 Single-page app: Singapore 24-hour PSI by area (NEA via data.gov.sg) and current weather for Singapore and 11 ASEAN cities (Open-Meteo).
 
 ## Files
-- `index.html` - the whole app (HTML, CSS, JS in one file, no build step)
-- `vercel.json` - optional: clean URLs and basic security headers
+- `index.html` - the whole app (HTML, CSS and JS in one file)
+- `src/analytics.js` - starts Vercel Web Analytics (`@vercel/analytics`)
+- `package.json` - dependencies and scripts (Vite builds the page and bundles analytics)
+- `vercel.json` - build settings (Vite, output `dist`), clean URLs and basic security headers
 
 ## Deploy on Vercel
-1. Unzip, then from this folder run `npx vercel` (preview) or `npx vercel --prod`.
+1. Unzip, run `npm install`, then `npx vercel` (preview) or `npx vercel --prod`.
    Or push the folder to a Git repo and import it at vercel.com/new.
-2. Framework preset: **Other**. Leave build command and output directory empty.
+2. Settings are read from `vercel.json` (framework Vite, build `npm run build`, output `dist`).
+3. In the Vercel dashboard open your project, go to **Analytics** and click **Enable**.
+   Page views show up after the next deployment gets traffic.
+
+## Local development
+`npm install`, then `npm run dev`. Analytics runs in debug mode locally and sends nothing.
 
 ## Data
 On load the page fetches:

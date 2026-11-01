@@ -1,0 +1,18 @@
+{
+  "name": "haze-monitor",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Singapore 24-hour PSI by area (NEA) and ASEAN weather (Open-Meteo)",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  },
+  "devDependencies": {
+    "vite": "^8.3.5"
+  }
+}
